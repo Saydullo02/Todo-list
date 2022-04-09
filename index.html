@@ -6,18 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/main.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Todo list</title>
 </head>
-<body>
+<body class="bg-black">
     
-    <h1 class="visually-hidden"></h1>
-    
-    <header>
-        <div class="container">
+    <main>
+        <section class="todo">
+            <div class="container pt-5">
+                <h2 class="text-white  ms-5 mb-4">Todo list</h2>
+                <form class="todo__form">
+                    <div class="row mb-5">
+                        <div class="col-5">
+                            <input type="text" class="form-control todo-input" placeholder="Type" required autocomplete="off" name="text_name">
+                        </div>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary todo-btn">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                
+                <ul class="todo__list mb-4">
+                    
+                </ul>
+                
+                <div class="row">
+                    <div class="col-6 todo__control">
+                        <button type="button" class="btn btn-outline-primary all-btn me-4">
+                            All <strong class="all-count text-white">0</strong>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary completed-btn me-4">
+                            Completed <strong class="completed-count text-white">0</strong>
+                        </button>
+                        <button type="button" class="btn btn-outline-success uncompleted-btn">
+                            Uncompleted <strong class="uncompleted-count text-white">0</strong>
+                        </button>
+                    </div>
+                </div>
+            </div>
             
-        </div>
-    </header>
-    
+            <template id="todo__template">
+                <li class="todo__item d-flex align-items-center">
+                    <div class="form-check me-5 w-25 mb-4">
+                        <input class="form-check-input todo-checkbox" type="checkbox" id="check1" name="" value="something" checked>
+                        <label class="form-check-label text-white todo-text"></label>
+                    </div>
+                    <button type="button" class="btn btn-primary todo-delete">Delete</button>
+                </li>
+            </template>
+        </section>
+    </main>
     
     <script src="./js/bootstrap.js"></script>
     <script src="./js/main.js"></script>
